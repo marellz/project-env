@@ -1,6 +1,8 @@
 start:
 	concurrently "php api/artisan serve" "yarn --cwd front dev -o"
 
+up: start
+
 # api
 api-install:
 	cp $(CURDIR)/api/.env.example $(CURDIR)/api/.env && composer install --working-dir=$(CURDIR)/api
